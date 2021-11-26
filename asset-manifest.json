@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/mosamaaibrahim/netflix/static/css/main.9ec974a6.chunk.css",
+    "main.js": "/mosamaaibrahim/netflix/static/js/main.4e42c194.chunk.js",
+    "main.js.map": "/mosamaaibrahim/netflix/static/js/main.4e42c194.chunk.js.map",
+    "runtime-main.js": "/mosamaaibrahim/netflix/static/js/runtime-main.8937d36e.js",
+    "runtime-main.js.map": "/mosamaaibrahim/netflix/static/js/runtime-main.8937d36e.js.map",
+    "static/css/2.50a816e4.chunk.css": "/mosamaaibrahim/netflix/static/css/2.50a816e4.chunk.css",
+    "static/js/2.e89d1b09.chunk.js": "/mosamaaibrahim/netflix/static/js/2.e89d1b09.chunk.js",
+    "static/js/2.e89d1b09.chunk.js.map": "/mosamaaibrahim/netflix/static/js/2.e89d1b09.chunk.js.map",
+    "index.html": "/mosamaaibrahim/netflix/index.html",
+    "static/css/2.50a816e4.chunk.css.map": "/mosamaaibrahim/netflix/static/css/2.50a816e4.chunk.css.map",
+    "static/css/main.9ec974a6.chunk.css.map": "/mosamaaibrahim/netflix/static/css/main.9ec974a6.chunk.css.map",
+    "static/js/2.e89d1b09.chunk.js.LICENSE.txt": "/mosamaaibrahim/netflix/static/js/2.e89d1b09.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8937d36e.js",
+    "static/css/2.50a816e4.chunk.css",
+    "static/js/2.e89d1b09.chunk.js",
+    "static/css/main.9ec974a6.chunk.css",
+    "static/js/main.4e42c194.chunk.js"
+  ]
+}
