@@ -2,7 +2,7 @@
   "name": "netflix",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/mosamaaibrahim/netflix",
+  "homepage": "/",
   "dependencies": {
     "@craco/craco": "^6.4.1",
     "axios": "^0.24.0",
