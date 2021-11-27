@@ -106,3 +106,24 @@ export function _getVideos(id) {
             });
     });
 }
+
+export function _getMoviesDetails(id) {
+    return new Promise((res, rej) => {
+        axios({
+            method: "get",
+            url: `movie/${id}?api_key=${API_KEY}`,
+            data: {},
+            headers: {
+                "Cache-Control": "no-cache",
+                "Content-Type": "application/json",
+            },
+        })
+            .then((responseText) => {
+                res(responseText);
+            })
+            .catch((error) => {
+                console.error(`_getMoviesDetails : ${error}`);
+                rej(error);
+            });
+    });
+}
