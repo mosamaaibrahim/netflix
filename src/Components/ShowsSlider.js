@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 // Import Swiper React components
 // Core modules imports are same as usual
 import { Navigation, Pagination } from 'swiper';
@@ -33,10 +34,14 @@ export class ShowsSlider extends Component {
                         {
                             Object.values(this.props?.shows)?.map(show => {
 
-                                return <SwiperSlide key={show.id}><img
-                                    className="m-auto w-[60vw] md:w-[9vw] rounded-2xl
+                                return <SwiperSlide key={show.id}>
+                                    <Link to={`${this.props.redirect}/${show.id}`}>
+                                        <img
+                                            className="m-auto w-[60vw] md:w-[9vw] rounded-2xl
                                                  cursor-pointer transition-all "
-                                    src={`https://image.tmdb.org/t/p/w500/${show.poster_path ?? show.profile_path}`} alt="Show poster" /></SwiperSlide>
+                                            src={`https://image.tmdb.org/t/p/w500/${show.poster_path ?? show.profile_path}`} alt="Show poster" />
+                                    </Link>
+                                </SwiperSlide>
 
 
                             })
