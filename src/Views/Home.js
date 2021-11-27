@@ -8,11 +8,11 @@ export class Home extends Component {
         return (
             <div>
                 <MainShow shows={Object.values(this.props.movies.nowPlaying)} />
-                <ShowsSlider title="Trending Movies" shows={this.props.movies.nowPlaying} />
-                <ShowsSlider title="Popular Movies" shows={this.props.movies.popularMovies} />
-                <ShowsSlider title="Trending Tv" shows={this.props.tvs.tvLatest} />
-                <ShowsSlider title="Toprated Tv" shows={this.props.tvs.topRated} />
-                <ShowsSlider title="Celebrities" shows={this.props.people.popular} />
+                <ShowsSlider title="Trending Movies" shows={this.props.movies.nowPlaying} redirect="/movies" />
+                <ShowsSlider title="Popular Movies" shows={this.props.movies.popularMovies} redirect="/movies" />
+                <ShowsSlider title="Trending Tv" shows={this.props.tvs.tvLatest} redirect="/tv" />
+                <ShowsSlider title="Toprated Tv" shows={this.props.tvs.topRated} redirect="/tv" />
+                <ShowsSlider title="Celebrities" shows={this.props.people.popular} redirect="/people" />
             </div>
         )
     }
