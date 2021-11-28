@@ -127,3 +127,23 @@ export function _getMoviesDetails(id) {
             });
     });
 }
+export function _getMoviesCredits(id) {
+    return new Promise((res, rej) => {
+        axios({
+            method: "get",
+            url: `/movie/${id}/credits?api_key=${API_KEY}`,
+            data: {},
+            headers: {
+                "Cache-Control": "no-cache",
+                "Content-Type": "application/json",
+            },
+        })
+            .then((responseText) => {
+                res(responseText);
+            })
+            .catch((error) => {
+                console.error(`_getMoviesDetails : ${error}`);
+                rej(error);
+            });
+    });
+}
