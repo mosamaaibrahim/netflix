@@ -35,10 +35,10 @@ export class SingleMovie extends Component {
     }
     render() {
         return (
-            <div className="grid grid-cols-1 md:grid-cols-5 md:gap-5 p-8 ">
-                <h1 className="text-3xl font-extrabold text-white col-span-4 items-center">{this.state.movie?.original_title}</h1>
+            <div className="grid gap-y-4 md:grid-cols-5 md:gap-5 p-8 ">
+                <h1 className="text-3xl font-extrabold text-white md:col-span-4 items-center">{this.state.movie?.original_title}</h1>
                 <div className="flex flex-row font-bold justify-between items-center col-span-1">
-                    <div className="text-white flex flex-row items-center justify-around">{this.state.movie?.vote_average}
+                    <div className="text-white flex flex-row items-center justify-around md:col-span-1">{this.state.movie?.vote_average}
                         <img src={StarIcon} alt="Star" className="h-5 mx-2" />
                     </div>
                     <div className="text-white font-bold flex flex-row items-center justify-around">{this.state.movie?.vote_count}
@@ -51,17 +51,17 @@ export class SingleMovie extends Component {
                     </div>
                 </div>
                 <img src={getPoster(this.state.movie?.poster_path)} alt="Poster"
-                    className="col-span-1 max-h-[50vh] rounded"
+                    className="max-h-[50vh] rounded justify-self-center md:col-span-1"
                 />
-                <iframe className="col-span-4 h-[50vh] w-full"
+                <iframe className="md:col-span-4 h-[50vh] w-full"
                     title="Movie trailer"
                     src={`https://www.youtube.com/embed/${this.state.video?.key}?controls=0&autoplay=1&mute=1&loop=1&playlist=${this.state.video?.key}`}>
                 </iframe>
 
-                <div className="text-white text-lg col-span-2">
-                    {this.state.movie?.overview}
+                <div className="flex flex-col md:col-span-2">
+                    <div className="text-white text-lg"> {this.state.movie?.overview}</div>
                 </div>
-                <div className="col-span-3 grid md:grid-cols-3 md:grid-rows-3 items-center  gap-4">
+                <div className="md:col-span-3 grid md:grid-cols-3 md:grid-rows-3 items-center  gap-4">
                     {
                         this.state.cast.map(char =>
                             <div className="flex flex-row h-[100px] justify-start items-center rounded-3xl overflow-hidden shadow-lg hover:bg-gray-800 cursor-pointer">
