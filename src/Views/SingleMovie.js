@@ -60,11 +60,48 @@ export class SingleMovie extends Component {
 
                 <div className="flex flex-col md:col-span-2">
                     <div className="text-white text-lg"> {this.state.movie?.overview}</div>
+                    <div className="md:col-span-3 grid md:grid-cols-2  items-center  gap-4">
+                        <div className="text-red-600 font-extrabold text-lg">Revenue</div>
+                        <div className="text-white flex flex-row items-center">
+                            {this.state.movie?.revenue}
+                            <img className="h-5 px-2" alt="dollars" src="https://img.icons8.com/external-soft-fill-juicy-fish/60/000000/external-dollar-banking-soft-fill-soft-fill-juicy-fish.png" />
+                        </div>
+
+                        <div className="text-red-600 font-extrabold text-lg">Release Date</div>
+                        <div className="text-white flex flex-row items-center">
+                            {this.state.movie?.release_date}
+                        </div>
+
+                        <div className="text-red-600 font-extrabold text-lg">Run Time</div>
+                        <div className="text-white flex flex-row items-center">
+                            {this.state.movie?.runtime} Mins
+                        </div>
+                        <div className="text-red-600 font-extrabold text-lg">Production Companies</div>
+                        <div className="text-white flex flex-row items-center justify-between">
+                            {
+                                this.state.movie?.production_companies.map(comp => <img key={comp.id} className="h-9 shadow-lg" src={getPoster(comp.logo_path)} alt="company logo" />)
+                            }
+                        </div>
+
+                        <div className="text-red-600 font-extrabold text-lg">Genres</div>
+                        <div className="text-white flex flex-row items-center">
+                            {
+                                this.state.movie?.genres.map(gen => <div key={gen.id} className="text-white mr-2 border-2 border-gray-600 rounded-xl p-1">{gen.name}</div>)
+                            }
+                        </div>
+
+
+
+
+
+
+                    </div>
+
                 </div>
                 <div className="md:col-span-3 grid md:grid-cols-3 md:grid-rows-3 items-center  gap-4">
                     {
                         this.state.cast.map(char =>
-                            <div className="flex flex-row h-[100px] justify-start items-center rounded-3xl overflow-hidden shadow-lg hover:bg-gray-800 cursor-pointer">
+                            <div key={char.id} className="flex flex-row h-[100px] justify-start items-center rounded-3xl overflow-hidden shadow-lg hover:bg-gray-800 cursor-pointer">
                                 <img
                                     className="h-full"
                                     src={getPoster(char.profile_path)} alt="Cast" />
