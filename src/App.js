@@ -12,6 +12,8 @@ import {
 import { getInit } from './Redux/actions/index'
 import init from './API/index';
 import SingleMovie from './Views/SingleMovie';
+import SingleTv from './Views/SingleTv';
+import Notfound from './Views/Notfound';
 function App(props) {
   useEffect(() => {
     getInit();
@@ -23,7 +25,8 @@ function App(props) {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/movies/:id" component={SingleMovie} />
-
+          <Route exact path="/tv/:id" component={SingleTv} />
+          <Route path="*" component={Notfound} />
         </Switch>
       </Router>
     </div>
