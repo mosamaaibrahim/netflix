@@ -5,6 +5,7 @@ import { _getMoviesDetails, _getVideos, _getMoviesCredits } from '../API/moviesA
 import StarIcon from '../Images/star.png'
 import VoteIcon from '../Images/vote.png'
 import ArrowIcon from '../Images/arrow.png'
+import { Link } from 'react-router-dom'
 export class SingleMovie extends Component {
     state = {
         movie: null,
@@ -101,7 +102,9 @@ export class SingleMovie extends Component {
                 <div className="md:col-span-3 grid md:grid-cols-3 md:grid-rows-3 items-center  gap-4">
                     {
                         this.state.cast.map(char =>
-                            <div key={char.id} className="flex flex-row h-[100px] justify-start items-center rounded-3xl overflow-hidden shadow-lg hover:bg-gray-800 cursor-pointer">
+                            <Link
+                                to={`/people/${char.id}`}
+                                key={char.id} className="flex flex-row h-[100px] justify-start items-center rounded-3xl overflow-hidden shadow-lg hover:bg-gray-800 cursor-pointer">
                                 <img
                                     className="h-full"
                                     src={getPoster(char.profile_path)} alt="Cast" />
@@ -109,7 +112,7 @@ export class SingleMovie extends Component {
                                     <p className="text-base text-white">{char.original_name}</p>
                                     <p className="text-sm text-gray-600">{`As ${char.character}`}</p>
                                 </div>
-                            </div>)
+                            </Link>)
                     }
                 </div>
             </div>
