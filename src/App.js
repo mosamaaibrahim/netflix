@@ -14,6 +14,7 @@ import init from './API/index';
 import SingleMovie from './Views/SingleMovie';
 import SingleTv from './Views/SingleTv';
 import Notfound from './Views/Notfound';
+import SinglePeople from './Views/SinglePeople';
 function App(props) {
   useEffect(() => {
     getInit();
@@ -26,6 +27,7 @@ function App(props) {
           <Route exact path="/" component={Home} />
           <Route exact path="/movies/:id" component={SingleMovie} />
           <Route exact path="/tv/:id" component={SingleTv} />
+          <Route exact path="/people/:id" component={SinglePeople} />
           <Route path="*" component={Notfound} />
         </Switch>
       </Router>
