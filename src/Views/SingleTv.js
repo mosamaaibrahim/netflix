@@ -4,6 +4,7 @@ import { getPoster } from '../Utils/constants'
 import StarIcon from '../Images/star.png'
 import VoteIcon from '../Images/vote.png'
 import ArrowIcon from '../Images/arrow.png'
+import { Link } from 'react-router-dom'
 export class SingleTv extends Component {
     state = {
         movie: null,
@@ -97,7 +98,9 @@ export class SingleTv extends Component {
                 <div className="md:col-span-3 grid md:grid-cols-3 md:grid-rows-3 items-center  gap-4">
                     {
                         this.state.cast.map(char =>
-                            <div key={char.id} className="flex flex-row h-[100px] justify-start items-center rounded-3xl overflow-hidden shadow-lg hover:bg-gray-800 cursor-pointer">
+                            <Link
+                                to={`/people/${char.id}`}
+                                key={char.id} className="flex flex-row h-[100px] justify-start items-center rounded-3xl overflow-hidden shadow-lg hover:bg-gray-800 cursor-pointer">
                                 <img
                                     className="h-full"
                                     src={getPoster(char.profile_path)} alt="Cast" />
@@ -105,7 +108,7 @@ export class SingleTv extends Component {
                                     <p className="text-base text-white">{char.original_name}</p>
                                     <p className="text-sm text-gray-600">{`As ${char.character}`}</p>
                                 </div>
-                            </div>)
+                            </Link>)
                     }
                 </div>
 
@@ -114,14 +117,16 @@ export class SingleTv extends Component {
 
                     <div className="flex flex-col md:flex-row justify-around items-center">
                         {
-                            this.state.movie?.seasons?.map(season => <div className="my-5 w-[300px] rounded-lg overflow-hidden flex flex-col shadow-2xl">
-                                <img
-                                    className="w-full"
-                                    src={getPoster(season.poster_path)} alt="Season poster"></img>
-                                <div className="text-white text-xl font-bold">{season.name}</div>
-                                <div className="text-gray-500 text-sm">{season.air_date}</div>
-                                <div className="text-gray-500 text-sm">{season.episode_count} Episodes</div>
-                            </div>)
+                            this.state.movie?.seasons?.map(season =>
+                                <div
+                                    className="my-5 w-[300px] rounded-lg overflow-hidden flex flex-col shadow-2xl">
+                                    <img
+                                        className="w-full"
+                                        src={getPoster(season.poster_path)} alt="Season poster"></img>
+                                    <div className="text-white text-xl font-bold">{season.name}</div>
+                                    <div className="text-gray-500 text-sm">{season.air_date}</div>
+                                    <div className="text-gray-500 text-sm">{season.episode_count} Episodes</div>
+                                </div>)
                         }
                     </div>
 
