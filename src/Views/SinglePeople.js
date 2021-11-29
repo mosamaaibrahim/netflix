@@ -4,6 +4,7 @@ import { _getPersonMovies, _getPeopleDetails } from '../API/peopleApi'
 import StarIcon from '../Images/star.png'
 import VoteIcon from '../Images/vote.png'
 import ArrowIcon from '../Images/arrow.png'
+import { Link } from 'react-router-dom'
 export class SinglePeople extends Component {
     state = {
         person: null,
@@ -62,7 +63,8 @@ export class SinglePeople extends Component {
                 <div className="text-red-600 font-extrabold text-lg md:col-span-5">Known for</div>
                 <div className="md:col-span-5 grid md:grid-cols-3 gap-5 md:grid-rows-3">
                     {
-                        this.state.movies?.map(movie => <div
+                        this.state.movies?.map(movie => <Link
+                            to={`/movies/${movie.id}`}
                             key={movie.id}
                             className="w-full rounded-xl overflow-hidden flex flex-col md:flex-row shadow-2xl justify-between cursor-pointer hover:bg-gray-800">
                             <img
@@ -91,7 +93,7 @@ export class SinglePeople extends Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>)
+                        </Link>)
                     }
                 </div>
             </div>
